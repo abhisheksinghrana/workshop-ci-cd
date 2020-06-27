@@ -3,22 +3,22 @@ pipeline {
     stages {
         stage('Installing NPM dependencies') {
             steps {
-                sh 'npm install'
+                sh 'yarn install'
             }
         }
         stage('Run Unit Test') {
             steps {
-                sh 'npm test'
+                sh 'yarn test'
             }
         }
         stage('Run Coverage Test') {
             steps {
-                sh 'npm run test:coverage'
+                sh 'yarn test:coverage'
             }
         }
         stage('Run Sonar Analysis') {
             steps {
-                sh 'npm run sonar'
+                sh 'yarn sonar'
             }
         }         
     }
