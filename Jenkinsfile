@@ -10,6 +10,16 @@ pipeline {
             steps {
                 sh 'yarn test'
             }
-        }        
+        }
+        stage('Run Coverage Test') {
+            steps {
+                sh 'yarn test:coverage'
+            }
+        }
+        stage('Run Sonar Analysis') {
+            steps {
+                sh 'yarn sonar'
+            }
+        }         
     }
 }
