@@ -9,7 +9,7 @@ services:
             dockerfile: Dockerfile
             context: .
         image: workshop3:1.0
-        environment: 
+        environment:
             - CUSTOMER_SVC_PORT=3000
             - CUSTOMER_DB_URL=mongodb://mongo:27011/customer-db
         links:
