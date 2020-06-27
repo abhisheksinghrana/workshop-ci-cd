@@ -66,10 +66,27 @@ pipeline {
             }
         }
 
-        stage('Upload the docker image to Google container repository') {
-            steps {
-                echo 'docker image uploaded to google repository'
-            }
-        }
+        // stage('Upload the docker image to Google container repository'){
+        //     steps {
+        //         sh 'gcloud builds submit --tag gcr.io/kuberenetes-01-basic/customer-service:1.0 .'
+        //     }
+        // }
+
+        // stage('Launch Mongodb service'){
+        //     steps {
+        //         sh 'kubectl create -f mongodb.yaml'
+        //     }
+        // }
+
+        //  stage('Launch Customer service'){
+        //     steps {
+        //         sh 'kubectl create -f customerservice.yaml'
+        //     }
+        //     post {
+        //         always{
+        //             echo 'Smoke Test run successfully'
+        //         }
+        //     }
+        // }
     }
 }
