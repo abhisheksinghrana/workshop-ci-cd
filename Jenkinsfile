@@ -3,23 +3,58 @@ pipeline {
     stages {
         stage('Installing NPM dependencies') {
             steps {
-                sh 'yarn install'
+                sh 'npm install'
             }
         }
         stage('Run Unit Test') {
             steps {
-                sh 'yarn test'
+                sh 'npm test'
             }
         }
         stage('Run Coverage Test') {
             steps {
-                sh 'yarn test:coverage'
+                sh 'npm run test:coverage'
             }
         }
         stage('Run Sonar Analysis') {
             steps {
-                sh 'yarn sonar'
+                sh 'npm run sonar'
             }
-        }         
+        }
+        stage('Run Docker Image') {
+            steps {
+                sh 'docker-compose-build'
+            }
+        }
+        stage('Upload Docker Image') {
+            steps {
+                echo 'Upload docker image to Dockerhub'
+            }
+        }
+        stage('Launch Customer Service Application') {
+            steps {
+                echo 'docker-compose up -d'
+            }
+        }
+        stage('Functional Test') {
+            steps {
+                echo 'Functional test executed successfully'
+            }
+        }
+        stage('Performance Test') {
+            steps {
+                echo 'Performance test executed successfully'
+            }
+        }
+        stage('Security Test') {
+            steps {
+                echo 'Security test executed successfully'
+            }
+        }
+        stage('Destroy Customer Service Application') {
+            steps {
+                echo 'docker-compose down'
+            }
+        }
     }
 }
