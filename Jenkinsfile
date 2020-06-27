@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Run Coverage Test') {
             steps {
-                sh 'npm test:coverage'
+                sh 'npm run test:coverage'
             }
         }
         stage('Run Sonar Analysis') {
             steps {
-                sh 'npm sonar'
+                sh 'npm run sonar'
             }
         }         
     }
