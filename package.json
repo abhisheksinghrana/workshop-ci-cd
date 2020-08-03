@@ -14,7 +14,7 @@
     "nodejs",
     "jest"
   ],
-  "author": "arunstiwari",
+  "author": "abhishekrana",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
